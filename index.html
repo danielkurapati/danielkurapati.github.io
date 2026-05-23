@@ -277,7 +277,7 @@ h1.name {
   aspect-ratio: 4/5; overflow: hidden; cursor: pointer; position: relative;
   border: var(--bw) solid var(--border); transition: border-color var(--T);
 }
-.photo-item-inner { width: 100%; height: 100%; transition: transform 0.35s ease; }
+.photo-item-inner { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.35s ease; }
 .photo-item-overlay {
   position: absolute; inset: 0; background: rgba(0,0,0,0);
   display: flex; align-items: flex-end; padding: 0.8rem;
@@ -317,6 +317,9 @@ h1.name {
 .lb-img-box {
   width: min(560px, 86vw); height: min(660px, 76vh);
   border: var(--bw) solid rgba(255,255,255,1);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .lb-caption {
   color: #ffffff; font-size: 0.95rem; 
