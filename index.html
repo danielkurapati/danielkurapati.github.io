@@ -961,42 +961,69 @@ tutors.forEach(t => {
    PHOTOGRAPHY
    ══════════════════════════════════════ */
 const photos = [
-  {label:'Urban Light', cls:'ph-1'}, {label:'Geometry',  cls:'ph-2'}, {label:'Nature',   cls:'ph-3'},
-  {label:'Contrast',   cls:'ph-4'}, {label:'Portrait',  cls:'ph-5'}, {label:'Dusk',     cls:'ph-6'},
-  {label:'Texture',    cls:'ph-7'}, {label:'Green',     cls:'ph-8'}, {label:'Night',    cls:'ph-9'},
-  {label:'Shadow',     cls:'ph-1'}, {label:'Morning',   cls:'ph-3'}, {label:'Abstract', cls:'ph-5'},
+  {label: 'Urban Light', url: 'path/to/image1.jpg'}, 
+  {label: 'Geometry',    url: 'path/to/image2.jpg'}, 
+  {label: 'Nature',      url: 'path/to/image3.jpg'},
+  {label: 'Contrast',    url: 'path/to/image4.jpg'}, 
+  {label: 'Portrait',    url: 'path/to/image5.jpg'}, 
+  {label: 'Dusk',        url: 'path/to/image6.jpg'},
+  {label: 'Texture',     url: 'path/to/image7.jpg'}, 
+  {label: 'Green',       url: 'path/to/image8.jpg'}, 
+  {label: 'Night',       url: 'path/to/image9.jpg'},
+  {label: 'Shadow',      url: 'path/to/image10.jpg'}, 
+  {label: 'Morning',     url: 'path/to/image11.jpg'}, 
+  {label: 'Abstract',    url: 'path/to/image12.jpg'}
 ];
+
 const pg = document.getElementById('photoGrid');
+
 photos.forEach((ph, i) => {
   const item = document.createElement('div');
   item.className = 'photo-item';
-  item.innerHTML = `<div class="photo-item-inner ${ph.cls}"></div>
-    <div class="photo-item-overlay"><span class="photo-item-label">${ph.label}</span></div>`;
+  item.innerHTML = `
+    <div class="photo-item-inner" style="background-image: url('${ph.url}');"></div>
+    <div class="photo-item-overlay">
+      <span class="photo-item-label">${ph.label}</span>
+    </div>`;
   item.onclick = () => openLb(i);
   pg.appendChild(item);
 });
 
 let curPhoto = 0;
+
 function openLb(i) {
-  curPhoto = i; renderLb();
+  curPhoto = i; 
+  renderLb();
   const lb = document.getElementById('lightbox');
   lb.classList.add('open');
   requestAnimationFrame(() => lb.classList.add('visible'));
   document.addEventListener('keydown', lbKey);
 }
+
 function renderLb() {
   const ph = photos[curPhoto];
-  document.getElementById('lbBox').className = `lb-img-box ${ph.cls}`;
+  const lbBox = document.getElementById('lbBox');
+  lbBox.className = 'lb-img-box'; 
+  lbBox.style.backgroundImage = `url('${ph.url}')`;
   document.getElementById('lbCap').textContent = `${ph.label}  ·  ${curPhoto + 1} / ${photos.length}`;
 }
+
 function closeLb() {
   const lb = document.getElementById('lightbox');
   lb.classList.remove('visible');
   setTimeout(() => lb.classList.remove('open'), 250);
   document.removeEventListener('keydown', lbKey);
 }
-function lbBgClose(e) { if (e.target === document.getElementById('lightbox')) closeLb(); }
-function lbNav(d) { curPhoto = (curPhoto + d + photos.length) % photos.length; renderLb(); }
+
+function lbBgClose(e) { 
+  if (e.target === document.getElementById('lightbox')) closeLb(); 
+}
+
+function lbNav(d) { 
+  curPhoto = (curPhoto + d + photos.length) % photos.length; 
+  renderLb(); 
+}
+
 function lbKey(e) {
   if (e.key === 'ArrowLeft')  lbNav(-1);
   if (e.key === 'ArrowRight') lbNav(1);
