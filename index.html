@@ -1174,14 +1174,14 @@ const vg = document.getElementById('vaultGrid');
 vaults.forEach(v => {
   const c = document.createElement('div');
   c.className = 'vault-card';
-  c.innerHTML = `<span class="vault-icon">${v.icon}</span><h3>${v.title}</h3><p>${v.desc}</p><span class="vault-count">${v.count}</span>`;
-  c.onclick = () => openVaultNotes(v.title, v.icon);
+  c.innerHTML = `</span><h3>${v.title}</h3><p>${v.desc}</p><span class="vault-count">${v.count}</span>`;
+  c.onclick = () => openVaultNotes(v.title);
   vg.appendChild(c);
 });
 
-function openVaultNotes(title, icon) {
+function openVaultNotes(title) {
   document.getElementById('vaultNotesMeta').textContent  = 'Obsidian · ' + title;
-  document.getElementById('vaultNotesTitle').textContent = icon + ' ' + title;
+  document.getElementById('vaultNotesTitle').textContent = title;
 
   const list  = document.getElementById('vaultNotesList');
   list.innerHTML = '';
