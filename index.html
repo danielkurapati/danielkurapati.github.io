@@ -230,6 +230,10 @@ h1.name {
   scrollbar-width: thin; scrollbar-color: var(--border) transparent;
 }
 
+.proj-content-wrap {
+  padding: 1.6rem 1.8rem;
+}
+
 /* ══════════════════════════════════════
    TUTORING
    ══════════════════════════════════════ */
@@ -289,15 +293,6 @@ h1.name {
   color: #ffffff; font-size: 0.95rem; font-weight: 700;
   letter-spacing: 0.02em;
 }
-.ph-1 { background: linear-gradient(135deg,#2c3e50,#3498db); }
-.ph-2 { background: linear-gradient(135deg,#1a1a2e,#e94560); }
-.ph-3 { background: linear-gradient(135deg,#134e5e,#71b280); }
-.ph-4 { background: linear-gradient(135deg,#373b44,#4286f4); }
-.ph-5 { background: linear-gradient(135deg,#3a1c71,#d76d77); }
-.ph-6 { background: linear-gradient(135deg,#0f2027,#2c5364); }
-.ph-7 { background: linear-gradient(135deg,#4a0404,#c05c33); }
-.ph-8 { background: linear-gradient(135deg,#1f3a1f,#5a9e5a); }
-.ph-9 { background: linear-gradient(135deg,#1a0533,#6a3de8); }
 
 /* Lightbox */
 .lightbox {
@@ -738,6 +733,7 @@ h1.name {
   .page { overflow: visible; }
   .inner-page-wrap { overflow: visible; }
   .inner-scroll { overflow: visible; padding: 1rem 1rem 3rem; }
+  .proj-content-wrap { padding: 1rem 1rem 3rem; }
 
   /* Inner header */
   .inner-top { padding: 1.2rem; flex-wrap: wrap; gap: 0.6rem; }
@@ -770,9 +766,6 @@ h1.name {
   .book-info { padding: 1rem 1.4rem 1rem 0; gap: 0.3rem; }
   .book-title-row { flex-wrap: wrap; gap: 0.4rem; }
   .book-author { width: 100%; }
-
-  /* Note list */
-  /* Left/Right borders are no longer stripped, they inherit from desktop class */
 
   /* Projects */
   .proj-detail-meta-bar { grid-template-columns: repeat(2, 1fr); }
@@ -858,9 +851,9 @@ h1.name {
           <div class="section-label">Current Focus</div>
           <div class="section-body">
             <ul>
-              <li>Technical Skills: Current interests are webapp and app development.</li>
-              <li>Visual Design: Currently exploring the principles of UI/UX design.</li>
-              <li>Online Tutoring: Teaching Physics and Chemistry for IGCSE, IB and AS/A Levels.</li>
+              <li>Online Tutoring: Teaching Physics and Chemistry for IGCSE, AS/A Level, and IB.</li>
+              <li>Visual Design: Currently exploring the principles of UI/UX and graphic design.</li>
+              <li>Video &amp; Systems: Editing with DaVinci Resolve and building knowledge systems in Obsidian.</li>
             </ul>
           </div>
         </div>
@@ -909,6 +902,7 @@ h1.name {
           <div class="contact-block">
             <div class="section-label">Contact</div>
             <p>
+              <a href="https://instagram.com/danielkurapati" target="_blank" class="contact-link">@danielkurapati</a><br>
               <a href="#" onclick="openGmail(event)" class="contact-link">danielkurapati27@gmail.com</a>
             </p>
           </div>
@@ -935,6 +929,7 @@ h1.name {
         <div class="contact-block">
           <div class="section-label">Contact</div>
           <p>
+            <a href="https://instagram.com/danielkurapati" target="_blank" class="contact-link">@danielkurapati</a><br>
             <a href="#" onclick="openGmail(event)" class="contact-link">danielkurapati27@gmail.com</a>
           </p>
         </div>
@@ -987,76 +982,79 @@ h1.name {
           <button class="back-btn" onclick="goBack()">BACK</button>
         </div>
       </div>
-      <div class="proj-detail-hero">
-        <div class="proj-detail-hero-inner project-banner-tutohub"></div>
-      </div>
-      <div class="proj-detail-meta-bar">
-        <div class="proj-meta-cell">
-          <div class="proj-meta-key">Role</div>
-          <div class="proj-meta-val">Solo Full-Stack Developer</div>
+      <!-- Fixed scrolling by placing the hero and meta bar inside inner-scroll -->
+      <div class="inner-scroll" style="padding: 0;">
+        <div class="proj-detail-hero">
+          <div class="proj-detail-hero-inner project-banner-tutohub"></div>
         </div>
-        <div class="proj-meta-cell">
-          <div class="proj-meta-key">Timeline</div>
-          <div class="proj-meta-val">1-Week Intensive Sprint</div>
-        </div>
-        <div class="proj-meta-cell">
-          <div class="proj-meta-key">Tech Stack</div>
-          <div class="proj-meta-val">React · Tailwind · Supabase</div>
-        </div>
-        <div class="proj-meta-cell">
-          <div class="proj-meta-key">Context</div>
-          <div class="proj-meta-val">Personal Project</div>
-        </div>
-      </div>
-      <div class="inner-scroll">
-        <div class="proj-action-btns">
-          <a class="proj-btn" href="#" target="_blank">Live Demo</a>
-          <a class="proj-btn" href="#" target="_blank">GitHub Repository</a>
-        </div>
-
-        <div class="proj-section">
-          <div class="proj-section-label">The Problem</div>
-          <div class="proj-section-body">A local tutoring academy was managing dozens of students entirely through scattered WhatsApp chains. Tutors had no direct line to students, owners acted as manual message routers, and the business had no hard data — like aggregate test scores or logged hours — to prove their ROI to prospective parents. The lack of infrastructure was actively preventing the business from scaling.</div>
-        </div>
-
-        <div class="proj-section">
-          <div class="proj-section-label">The Goal</div>
-          <div class="proj-section-body">To build a premium, 3-tier web application (Admin, Tutor, Student views) that eliminated the communication bottleneck. The MVP focused on the Tutor View: a command centre for scheduling recurring classes, logging session topics, assigning work, and tracking grading deadlines — all in a clean, enterprise-grade UI.</div>
-        </div>
-
-        <hr class="proj-divider">
-
-        <div class="proj-section">
-          <div class="proj-section-label">Technical Approach</div>
-          <div class="proj-section-body">Built as a Single Page Application using React, styled purely with Tailwind CSS for a crisp, Apple-like aesthetic without relying on bulky UI libraries. The backend is powered by Supabase, leveraging PostgreSQL for relational data, GoTrue for role-based authentication, and Row Level Security to physically isolate tenant data at the database level.</div>
-        </div>
-
-        <div class="proj-section">
-          <div class="proj-section-label">Key Features</div>
-          <div class="proj-section-body">
-            <ul>
-              <li><strong>Unified Educational Stream:</strong> A chronological feed merging classes, assignments, and announcements — sorted dynamically by due dates, creation times, and urgency.</li>
-              <li><strong>Smart Actionable Dashboards:</strong> An Overview hub with time-aware greetings and dynamic urgency metrics. Automatically isolates the "Up Next" class and aggregates overdue items into a Needs Attention routing centre.</li>
-              <li><strong>Non-Destructive Audit Trails:</strong> Soft Deletes for class scheduling — cancelled classes are preserved with distinct styling and an Undo feature, keeping billing and historical records intact.</li>
-            </ul>
+        <div class="proj-detail-meta-bar">
+          <div class="proj-meta-cell">
+            <div class="proj-meta-key">Role</div>
+            <div class="proj-meta-val">Solo Full-Stack Developer</div>
+          </div>
+          <div class="proj-meta-cell">
+            <div class="proj-meta-key">Timeline</div>
+            <div class="proj-meta-val">1-Week Intensive Sprint</div>
+          </div>
+          <div class="proj-meta-cell">
+            <div class="proj-meta-key">Tech Stack</div>
+            <div class="proj-meta-val">React · Tailwind · Supabase</div>
+          </div>
+          <div class="proj-meta-cell">
+            <div class="proj-meta-key">Context</div>
+            <div class="proj-meta-val">Personal Project</div>
           </div>
         </div>
+        <div class="proj-content-wrap">
+          <div class="proj-action-btns">
+            <a class="proj-btn" href="#" target="_blank">Live Demo</a>
+            <a class="proj-btn" href="#" target="_blank">GitHub Repository</a>
+          </div>
 
-        <hr class="proj-divider">
+          <div class="proj-section">
+            <div class="proj-section-label">The Problem</div>
+            <div class="proj-section-body">A local tutoring academy was managing dozens of students entirely through scattered WhatsApp chains. Tutors had no direct line to students, owners acted as manual message routers, and the business had no hard data — like aggregate test scores or logged hours — to prove their ROI to prospective parents. The lack of infrastructure was actively preventing the business from scaling.</div>
+          </div>
 
-        <div class="proj-section">
-          <div class="proj-section-label">The Obstacle</div>
-          <div class="proj-section-body">During rapid prototyping, the primary App.jsx file ballooned into a 1,200+ line monolith containing all views, modals, forms, and state variables. Managing prop-drilling became fragile, and pushing new features caused cascading rendering bugs. Migrating the database to a multi-tenant Supabase architecture also caused ID-matching failures when saving user preferences.</div>
-        </div>
+          <div class="proj-section">
+            <div class="proj-section-label">The Goal</div>
+            <div class="proj-section-body">To build a premium, 3-tier web application (Admin, Tutor, Student views) that eliminated the communication bottleneck. The MVP focused on the Tutor View: a command centre for scheduling recurring classes, logging session topics, assigning work, and tracking grading deadlines — all in a clean, enterprise-grade UI.</div>
+          </div>
 
-        <div class="proj-section">
-          <div class="proj-section-label">The Solution</div>
-          <div class="proj-section-body">Paused feature development to execute a full architectural refactor — breaking the monolith into a scalable folder structure (/components, /views, /modals). Implemented React's Context API (AppContext) to eliminate prop-drilling, turning the root component into a central broadcaster. Updated Supabase to rely on auth.users(id) with .single() queries and strict Row Level Security policies, ensuring data integrity without hardcoding IDs.</div>
-        </div>
+          <hr class="proj-divider">
 
-        <div class="proj-section">
-          <div class="proj-section-label">Key Takeaways</div>
-          <div class="proj-section-body">This project bridged the gap between writing scripts and architecting systems. Component isolation, multi-tenant database design, and securing user data at the row level before it ever reaches the frontend — these are the principles that will shape every project I build from here.</div>
+          <div class="proj-section">
+            <div class="proj-section-label">Technical Approach</div>
+            <div class="proj-section-body">Built as a Single Page Application using React, styled purely with Tailwind CSS for a crisp, Apple-like aesthetic without relying on bulky UI libraries. The backend is powered by Supabase, leveraging PostgreSQL for relational data, GoTrue for role-based authentication, and Row Level Security to physically isolate tenant data at the database level.</div>
+          </div>
+
+          <div class="proj-section">
+            <div class="proj-section-label">Key Features</div>
+            <div class="proj-section-body">
+              <ul>
+                <li><strong>Unified Educational Stream:</strong> A chronological feed merging classes, assignments, and announcements — sorted dynamically by due dates, creation times, and urgency.</li>
+                <li><strong>Smart Actionable Dashboards:</strong> An Overview hub with time-aware greetings and dynamic urgency metrics. Automatically isolates the "Up Next" class and aggregates overdue items into a Needs Attention routing centre.</li>
+                <li><strong>Non-Destructive Audit Trails:</strong> Soft Deletes for class scheduling — cancelled classes are preserved with distinct styling and an Undo feature, keeping billing and historical records intact.</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="proj-divider">
+
+          <div class="proj-section">
+            <div class="proj-section-label">The Obstacle</div>
+            <div class="proj-section-body">During rapid prototyping, the primary App.jsx file ballooned into a 1,200+ line monolith containing all views, modals, forms, and state variables. Managing prop-drilling became fragile, and pushing new features caused cascading rendering bugs. Migrating the database to a multi-tenant Supabase architecture also caused ID-matching failures when saving user preferences.</div>
+          </div>
+
+          <div class="proj-section">
+            <div class="proj-section-label">The Solution</div>
+            <div class="proj-section-body">Paused feature development to execute a full architectural refactor — breaking the monolith into a scalable folder structure (/components, /views, /modals). Implemented React's Context API (AppContext) to eliminate prop-drilling, turning the root component into a central broadcaster. Updated Supabase to rely on auth.users(id) with .single() queries and strict Row Level Security policies, ensuring data integrity without hardcoding IDs.</div>
+          </div>
+
+          <div class="proj-section">
+            <div class="proj-section-label">Key Takeaways</div>
+            <div class="proj-section-body">This project bridged the gap between writing scripts and architecting systems. Component isolation, multi-tenant database design, and securing user data at the row level before it ever reaches the frontend — these are the principles that will shape every project I build from here.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1102,7 +1100,7 @@ h1.name {
         </div>
       </div>
       <div class="inner-scroll">
-        <p class="photo-intro-text">A collection of moments — light, shadow, and the quiet geometry of everyday life. Most were shot on a Samsung Galaxy Note5 and edited on Lightroom Mobile. Tap any photo to view full screen.</p>
+        <p class="photo-intro-text">A collection of moments — light, shadow, and the quiet geometry of everyday life. Tap any photo to view full screen.</p>
         <div class="photo-grid" id="photoGrid"></div>
       </div>
     </div>
@@ -1121,7 +1119,7 @@ h1.name {
         </div>
       </div>
       <div class="inner-scroll">
-        <p class="reading-intro-text">A reading list — coming soon.</p>
+        <p class="reading-intro-text">A collection of books that have fundamentally shaped how I think about design, science, and human behavior. These are the ones I keep returning to.</p>
         <div class="reading-list" id="readingList"></div>
       </div>
     </div>
@@ -1254,21 +1252,20 @@ document.addEventListener('touchend', e => {
    TUTORING
    ══════════════════════════════════════ */
 document.getElementById('tutorIntro').textContent =
-  'I started tutoring online in June 2025, driven by a desire to make Physics and Chemistry feel ' +
-  'less intimidating for students sitting high-stakes exams. Since then I\'ve logged over 100 hours ' +
-  'of 1-on-1 sessions, working with students across IGCSE, AS/A Level, and IB curricula. What keeps ' +
-  'me coming back is the moment a concept finally clicks — there\'s nothing quite like watching ' +
-  'a student\'s confidence transform through consistent, patient practice.';
+  'I started tutoring online under the ARAA Academy in June 2025, before joining college so that I could earn some money for myself. ' +
+  'Since then I\'ve fallen in love with teaching, teaching 5 students over the last few months. ' +
+  'I\'ve logged over 175 hours of 1-on-1 sessions, working with students across IGCSE, AS/A Level, and IB curricula. Helping students' +
+  ' through difficult topics and watching a concept click is what keeps me coming back.';
 
 const tutors = [
   { title:'Physics',
     desc:'Core mechanics, electromagnetism, waves, and modern physics across IGCSE, AS/A Level, and IB. Focus on conceptual clarity and exam technique.',
     badge:'IGCSE · AS/A · IB' },
   { title:'Chemistry',
-    desc:'Organic, inorganic, and physical chemistry. Emphasis on stoichiometry, bonding, and helping students decode mark schemes confidently.',
+    desc:'Delivering expert guidance across Physical, Inorganic, and Organic disciplines, with a dedicated focus on mastering Organic Chemistry.',
     badge:'IGCSE · AS/A · IB' },
   { title:'Approach',
-    desc:'Sessions are tailored to each student\'s pace using worked examples, past paper walkthroughs, and Socratic questioning.',
+    desc:'Sessions are tailored to each student\'s pace using worked examples, past paper walkthroughs and flexible lesson plans',
     badge:'Online · 1-on-1' }
 ];
 const tg = document.getElementById('tutorGrid');
@@ -1281,18 +1278,38 @@ tutors.forEach(t => {
 
 /* ══════════════════════════════════════
    PHOTOGRAPHY
-   Photos array: add { label, src } for real images,
-   or { label, cls } for gradient placeholders.
-   orientation is auto-detected from image dimensions.
    ══════════════════════════════════════ */
 const photos = [
-  {label:'Urban Light', cls:'ph-1'}, {label:'Geometry',  cls:'ph-2'}, {label:'Nature',   cls:'ph-3'},
-  {label:'Contrast',   cls:'ph-4'}, {label:'Portrait',  cls:'ph-5'}, {label:'Dusk',     cls:'ph-6'},
-  {label:'Texture',    cls:'ph-7'}, {label:'Green',     cls:'ph-8'}, {label:'Night',    cls:'ph-9'},
-  {label:'Shadow',     cls:'ph-1'}, {label:'Morning',   cls:'ph-3'}, {label:'Abstract', cls:'ph-5'},
+  {label: '', url: 'photos/photo1.jpg'},
+  {label: '', url: 'photos/photo2.jpg'},
+  {label: '', url: 'photos/photo3.jpg'},
+  {label: '', url: 'photos/photo4.jpg'},
+  {label: '', url: 'photos/photo5.jpg'},
+  {label: '', url: 'photos/photo6.jpg'},
+  {label: '', url: 'photos/photo7.jpg'},
+  {label: '', url: 'photos/photo8.jpg'},
+  {label: '', url: 'photos/photo9.jpg'},
+  {label: '', url: 'photos/photo10.jpg'},
+  {label: '', url: 'photos/photo11.jpg'},
+  {label: '', url: 'photos/photo12.jpg'},
+  {label: '', url: 'photos/photo13.jpg'},
+  {label: '', url: 'photos/photo14.jpg'},
+  {label: '', url: 'photos/photo15.jpg'},
+  {label: '', url: 'photos/photo16.jpg'},
+  {label: '', url: 'photos/photo17.jpg'},
+  {label: '', url: 'photos/photo18.jpg'},
+  {label: '', url: 'photos/photo19.jpg'},
+  {label: '', url: 'photos/photo20.jpg'},
+  {label: '', url: 'photos/photo21.jpg'},
+  {label: '', url: 'photos/photo22.jpg'},
+  {label: '', url: 'photos/photo23.jpg'},
+  {label: '', url: 'photos/photo24.jpg'},
+  {label: '', url: 'photos/photo25.jpg'},
+  {label: '', url: 'photos/photo26.jpg'},
+  {label: '', url: 'photos/photo27.jpg'},
+  {label: '', url: 'photos/photo28.jpg'}
 ];
 
-/* Detect orientation from an image element and return 'portrait'|'landscape'|'square' */
 function getOrientation(w, h) {
   const ratio = w / h;
   if (ratio < 0.95)  return 'portrait';
@@ -1304,8 +1321,8 @@ const pg = document.getElementById('photoGrid');
 
 function buildPhotoItem(ph, i) {
   const item = document.createElement('div');
-
-  if (ph.src) {
+  
+  if (ph.url) {
     /* Real image — detect orientation then set class */
     item.className = 'photo-item';
     const bgImg = new Image();
@@ -1313,18 +1330,12 @@ function buildPhotoItem(ph, i) {
       const orient = getOrientation(bgImg.naturalWidth, bgImg.naturalHeight);
       item.classList.add(orient);
     };
-    bgImg.src = ph.src;
+    bgImg.src = ph.url;
     item.innerHTML = `
-      <div class="photo-item-inner" style="background:url('${ph.src}') center/cover no-repeat"></div>
-      <div class="photo-item-overlay"><span class="photo-item-label">${ph.label}</span></div>`;
-  } else {
-    /* Gradient placeholder — default to portrait (tall) */
-    item.className = 'photo-item portrait';
-    item.innerHTML = `
-      <div class="photo-item-inner ${ph.cls}"></div>
+      <div class="photo-item-inner" style="background:url('${ph.url}') center/cover no-repeat"></div>
       <div class="photo-item-overlay"><span class="photo-item-label">${ph.label}</span></div>`;
   }
-
+  
   item.onclick = () => openLb(i);
   return item;
 }
@@ -1332,33 +1343,40 @@ function buildPhotoItem(ph, i) {
 photos.forEach((ph, i) => pg.appendChild(buildPhotoItem(ph, i)));
 
 let curPhoto = 0;
+
 function openLb(i) {
-  curPhoto = i; renderLb();
+  curPhoto = i; 
+  renderLb();
   const lb = document.getElementById('lightbox');
   lb.classList.add('open');
   requestAnimationFrame(() => lb.classList.add('visible'));
   document.addEventListener('keydown', lbKey);
 }
+
 function renderLb() {
   const ph = photos[curPhoto];
-  const box = document.getElementById('lbBox');
-  if (ph.src) {
-    box.className = 'lb-img-box';
-    box.style.background = `url('${ph.src}') center/contain no-repeat`;
-  } else {
-    box.className = `lb-img-box ${ph.cls}`;
-    box.style.background = '';
-  }
+  const lbBox = document.getElementById('lbBox');
+  lbBox.className = 'lb-img-box'; 
+  lbBox.style.backgroundImage = `url('${ph.url}')`;
   document.getElementById('lbCap').textContent = `${ph.label}  ·  ${curPhoto + 1} / ${photos.length}`;
 }
+
 function closeLb() {
   const lb = document.getElementById('lightbox');
   lb.classList.remove('visible');
   setTimeout(() => lb.classList.remove('open'), 250);
   document.removeEventListener('keydown', lbKey);
 }
-function lbBgClose(e) { if (e.target === document.getElementById('lightbox')) closeLb(); }
-function lbNav(d) { curPhoto = (curPhoto + d + photos.length) % photos.length; renderLb(); }
+
+function lbBgClose(e) { 
+  if (e.target === document.getElementById('lightbox')) closeLb(); 
+}
+
+function lbNav(d) { 
+  curPhoto = (curPhoto + d + photos.length) % photos.length; 
+  renderLb(); 
+}
+
 function lbKey(e) {
   if (e.key === 'ArrowLeft')  lbNav(-1);
   if (e.key === 'ArrowRight') lbNav(1);
@@ -1379,14 +1397,22 @@ const bookGradients = [
   'linear-gradient(160deg,#1f3a1f,#5a9e5a)',
 ];
 const books = [
-  { title:'—', author:'—', tag:'—', review:'' },
-  { title:'—', author:'—', tag:'—', review:'' },
-  { title:'—', author:'—', tag:'—', review:'' },
-  { title:'—', author:'—', tag:'—', review:'' },
-  { title:'—', author:'—', tag:'—', review:'' },
-  { title:'—', author:'—', tag:'—', review:'' },
-  { title:'—', author:'—', tag:'—', review:'' },
-  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'Flowers for Algernon',             author:'Daniel Keyes',        tag:'Sci-Fi',
+    review:'A heart-wrenching tale of intelligence, identity, and what it truly means to be human.' },
+  { title:'The Design of Everyday Things',    author:'Don Norman',           tag:'Design',
+    review:'A foundational text on human-centred design — changed how I see every object I interact with.' },
+  { title:'Atomic Habits',                    author:'James Clear',          tag:'Self-Help',
+    review:'Practical and incremental — a system for building habits that actually stick.' },
+  { title:'The Moon is a Harsh Mistress',     author:'Robert A. Heinlein',   tag:'Sci-Fi',
+    review:'Gripping political sci-fi with a fascinating AI narrator. Made me rethink freedom.' },
+  { title:'Deep Work',                        author:'Cal Newport',          tag:'Productivity',
+    review:'A compelling case for distraction-free focus. Directly influenced how I study.' },
+  { title:'The Pragmatic Programmer',         author:'Hunt & Thomas',        tag:'CS',
+    review:'Timeless advice for software craftspeople — every chapter has something worth acting on.' },
+  { title:"Man's Search for Meaning",         author:'Viktor Frankl',        tag:'Philosophy',
+    review:'Profound and quietly devastating. Frankl finds purpose in the darkest circumstances.' },
+  { title:'A Short History of Nearly Everything', author:'Bill Bryson',      tag:'Science',
+    review:"Makes science feel alive and wondrous — Bryson's enthusiasm is completely contagious." },
 ];
 
 const rl = document.getElementById('readingList');
@@ -1413,107 +1439,56 @@ books.forEach((b, i) => {
    OBSIDIAN — vault grid w/ Sub-topic data
    ══════════════════════════════════════ */
 const vaultNotesData = {
-  'Physics Notes': [
-    { title:'Kinematics & SUVAT',
-      review:'All kinematic equations derived from first principles, with projectile motion examples.',
-      url:'https://drive.google.com/drive/folders/your-physics-id' },
-    { title:'Electromagnetism',
-      review:"Faraday's law, Maxwell's equations, and electromagnetic induction worked problems.",
-      url:'https://drive.google.com/drive/folders/your-physics-id' },
-    { title:'Waves & Optics',
-      review:'Interference, diffraction, standing waves, and the photoelectric effect — exam-ready.',
-      url:'https://drive.google.com/drive/folders/your-physics-id' },
-    { title:'Thermodynamics',
-      review:'First and second laws, heat engines, and entropy with worked examples.',
-      url:'https://drive.google.com/drive/folders/your-physics-id' },
-    { title:'Modern Physics',
-      review:'Quantum mechanics basics, radioactive decay, and nuclear reactions summary.',
-      url:'https://drive.google.com/drive/folders/your-physics-id' },
-  ],
-  'Design': [
-    { title:'Typography Principles',
-      review:'Type anatomy, hierarchy, pairing logic, and type-in-UI rules I keep coming back to.',
-      url:'https://drive.google.com/drive/folders/your-design-id' },
-    { title:'Colour Theory',
-      review:'Hue, saturation, contrast ratios, and building cohesive palettes from scratch.',
-      url:'https://drive.google.com/drive/folders/your-design-id' },
-    { title:'Grid & Layout',
-      review:'Column grids, baseline grids, and compositional asymmetry in editorial design.',
-      url:'https://drive.google.com/drive/folders/your-design-id' },
-    { title:'UI Components',
-      review:'Button states, form patterns, navigation systems, and micro-interaction notes.',
-      url:'https://drive.google.com/drive/folders/your-design-id' },
-  ],
-  'Cinema': [
-    { title:'Director Studies',
-      review:'Notes on Kubrick, Tarkovsky, Wong Kar-wai — their visual language and recurring motifs.',
-      url:'https://drive.google.com/drive/folders/your-cinema-id' },
-    { title:'Shot Breakdowns',
-      review:'Frame analysis from films that stayed with me — composition, colour, and movement.',
-      url:'https://drive.google.com/drive/folders/your-cinema-id' },
-    { title:'Watchlist',
-      review:'An ever-growing, ever-reorganised list sorted by mood, genre, and director.',
-      url:'https://drive.google.com/drive/folders/your-cinema-id' },
-  ],
-  'CS & Code': [
-    { title:'Data Structures',
-      review:'Arrays, linked lists, trees, graphs — implementation notes from labs at IIITT.',
-      url:'https://drive.google.com/drive/folders/your-cs-id' },
-    { title:'Algorithms',
-      review:'Sorting, searching, dynamic programming — complexity analysis and pseudocode.',
-      url:'https://drive.google.com/drive/folders/your-cs-id' },
-    { title:'System Design',
-      review:'Scalability concepts, databases, and architecture patterns picked up from reading.',
-      url:'https://drive.google.com/drive/folders/your-cs-id' },
-    { title:'Project Ideas',
-      review:'Running list of things I want to build — side projects waiting for time and energy.',
-      url:'https://drive.google.com/drive/folders/your-cs-id' },
-  ],
-  'Book Summaries': [
-    { title:'Atomic Habits — Key Ideas',
-      review:'Core frameworks: habit loop, 1% improvement, environment design, identity-based habits.',
-      url:'https://drive.google.com/drive/folders/your-books-id' },
-    { title:'Deep Work — Summary',
-      review:'Rules for focused success, deep vs shallow work, and how to build a deep work ritual.',
-      url:'https://drive.google.com/drive/folders/your-books-id' },
-    { title:"Man's Search for Meaning — Notes",
-      review:"Logotherapy, the will to meaning, and Frankl's three paths to meaning.",
-      url:'https://drive.google.com/drive/folders/your-books-id' },
-  ],
-  'Fleeting Thoughts': [
-    { title:'On Attention',
-      review:"Why the scarcest resource isn't time — it's the ability to stay with one thing.",
-      url:'https://drive.google.com/drive/folders/your-fleeting-id' },
-    { title:'Teaching & Learning',
-      review:"Observations from tutoring: the student's confusion is always information, never inconvenience.",
-      url:'https://drive.google.com/drive/folders/your-fleeting-id' },
-    { title:'On Systems',
-      review:'Everything that keeps working does so because someone built a system around it.',
-      url:'https://drive.google.com/drive/folders/your-fleeting-id' },
+  'PH101': [
+    { 
+      title: 'Quantum Mechanics',
+      review: 'Foundational concepts, photoelectric effect, Compton\'s shift, wave-particle duality, Schrödinger equation, quantum tunneling.',
+      url: 'obsidian/ph101/u1-quantum_mechanics.pdf' 
+    },
+    { 
+      title: 'Electromagnetic Theory',
+      review: 'Divergence, curl, coordinates, Coulomb\'s & Gauss law, Lorentz & Ampere\'s force, EMF induction, Maxwell\'s equations.',
+      url: 'obsidian/ph101/u2-electromagnetic theory.pdf' 
+    },
+    { 
+      title: 'Waves and Quantum Optics',
+      review: 'Interference, Newton\'s rings, diffraction (Fraunhofer/Fresnel), wave superposition, Lissajous figures.',
+      url: 'obsidian/ph101/u3-waves_and_quantum_optics.pdf' 
+    },
+    { 
+      title: 'Lasers',
+      review: 'Laser characteristics, Einstein coefficients, spontaneous & stimulated emission, pumping, Ruby/He-Ne/Semiconductor lasers.',
+      url: 'obsidian/ph101/u4-lasers.pdf' 
+    },
+    { 
+      title: 'Optical Fiber',
+      review: 'Fiber structure, light guidance principles, numerical aperture, fiber types, V-parameter, communication systems.',
+      url: 'obsidian/ph101/u5-optical_fiber.pdf' 
+    },
+    { 
+      title: 'Semiconductors',
+      review: 'Intrinsic & extrinsic carriers, Fermi levels, law of mass action, drift, diffusion, effective mass, Hall effect.',
+      url: 'obsidian/ph101/u6-semiconductors.pdf' 
+    }
   ],
 };
 
 const vaults = [
-  { icon:'⚛️', title:'Physics Notes',    desc:'Concept maps, derivations, and worked problems from coursework and tutoring sessions.',                      count:'42 notes' },
-  { icon:'🎨', title:'Design',           desc:'UI/UX principles, typography references, color theory, and inspiration from designers I admire.',             count:'28 notes' },
-  { icon:'🎬', title:'Cinema',           desc:'Film analysis, director studies, shot breakdowns, and an ever-growing watchlist.',                            count:'35 notes' },
-  { icon:'📐', title:'CS & Code',        desc:'Algorithms, data structures, project ideas, and notes from labs and lectures at IIITT.',                      count:'51 notes' },
-  { icon:'📖', title:'Book Summaries',   desc:'Key ideas and personal reflections from everything on my reading list.',                                      count:'18 notes' },
-  { icon:'💭', title:'Fleeting Thoughts',desc:"Quick captures — observations, half-formed ideas, and things I don't want to forget.",                        count:'93 notes' },
+  {title:'PH101',    desc:'Physics notes from semester 1',                      count:'42 notes' },
 ];
 
 const vg = document.getElementById('vaultGrid');
 vaults.forEach(v => {
   const c = document.createElement('div');
   c.className = 'vault-card';
-  c.innerHTML = `<span class="vault-icon">${v.icon}</span><h3>${v.title}</h3><p>${v.desc}</p><span class="vault-count">${v.count}</span>`;
-  c.onclick = () => openVaultNotes(v.title, v.icon);
+  c.innerHTML = `<h3>${v.title}</h3><p>${v.desc}</p><span class="vault-count">${v.count}</span>`;
+  c.onclick = () => openVaultNotes(v.title);
   vg.appendChild(c);
 });
 
-function openVaultNotes(title, icon) {
+function openVaultNotes(title) {
   document.getElementById('vaultNotesMeta').textContent  = 'Obsidian · ' + title;
-  document.getElementById('vaultNotesTitle').textContent = icon + ' ' + title;
+  document.getElementById('vaultNotesTitle').textContent = title;
 
   const list  = document.getElementById('vaultNotesList');
   list.innerHTML = '';
