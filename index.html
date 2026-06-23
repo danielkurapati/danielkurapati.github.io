@@ -557,7 +557,7 @@ h1.name {
   transition: color var(--T), border-color var(--T);
 }
 .project-card-banner {
-  width: 100%; aspect-ratio: 16/5; overflow: hidden;
+  width: 100%; aspect-ratio: 16/9; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   position: relative;
   transition: border-color var(--T);
@@ -579,7 +579,7 @@ h1.name {
    PROJECT DETAIL PAGE
    ══════════════════════════════════════ */
 .proj-detail-hero {
-  width: 100%; aspect-ratio: 16/5; overflow: hidden; flex-shrink: 0;
+  width: 100%; aspect-ratio: 16/9; overflow: hidden; flex-shrink: 0;
   border-bottom: var(--bw) solid var(--border);
   transition: border-color var(--T);
 }
@@ -607,20 +607,6 @@ h1.name {
 .proj-meta-val {
   font-size: 0.9rem; line-height: 1.4; color: var(--text);
   transition: color var(--T);
-}
-.proj-action-btns {
-  display: flex; gap: 0.8rem; margin-bottom: 1.6rem;
-  padding-bottom: 1.4rem; border-bottom: var(--bw) solid var(--border);
-  transition: border-color var(--T);
-}
-.proj-btn {
-  font-family: 'Abril Fatface', serif;
-  text-transform: uppercase;
-  font-size: 0.8rem; letter-spacing: 0.1em;
-  color: var(--text); border: var(--bw) solid var(--border);
-  padding: 0.55rem 1.2rem; background: none; cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color var(--T);
-  text-decoration: none; display: inline-block;
 }
 .proj-section {
   margin-bottom: 1.8rem;
@@ -675,10 +661,6 @@ h1.name {
   .note-row:hover .note-num, .note-row:hover .note-title, .note-row:hover .note-review { color: var(--bg-card); }
   .contact-link:hover { border-bottom-color: var(--text); }
   .project-card:hover .project-card-banner-inner { transform: scale(1.03); }
-  .project-card:hover .project-card-label { background: var(--text); }
-  .project-card:hover .project-card-num,
-  .project-card:hover .project-card-name { color: var(--bg-card); }
-  .proj-btn:hover { background: var(--text); color: var(--bg-card); }
 }
 
 /* ══════════════════════════════════════
@@ -807,9 +789,6 @@ h1.name {
   .accordion-header:active .acc-icon {
     color: var(--bg-card) !important;
   }
-  .project-card:active .project-card-label { background: var(--text); }
-  .project-card:active .project-card-num,
-  .project-card:active .project-card-name { color: var(--bg-card); }
 }
 </style>
 </head>
@@ -982,7 +961,6 @@ h1.name {
           <button class="back-btn" onclick="goBack()">BACK</button>
         </div>
       </div>
-      <!-- Fixed scrolling by placing the hero and meta bar inside inner-scroll -->
       <div class="inner-scroll" style="padding: 0;">
         <div class="proj-detail-hero">
           <div class="proj-detail-hero-inner project-banner-tutohub"></div>
@@ -990,11 +968,11 @@ h1.name {
         <div class="proj-detail-meta-bar">
           <div class="proj-meta-cell">
             <div class="proj-meta-key">Role</div>
-            <div class="proj-meta-val">Solo Full-Stack Developer</div>
+            <div class="proj-meta-val">Full-Stack Developer (with AI assistance)</div>
           </div>
           <div class="proj-meta-cell">
             <div class="proj-meta-key">Timeline</div>
-            <div class="proj-meta-val">1-Week Intensive Sprint</div>
+            <div class="proj-meta-val">Ongoing</div>
           </div>
           <div class="proj-meta-cell">
             <div class="proj-meta-key">Tech Stack</div>
@@ -1006,14 +984,9 @@ h1.name {
           </div>
         </div>
         <div class="proj-content-wrap">
-          <div class="proj-action-btns">
-            <a class="proj-btn" href="#" target="_blank">Live Demo</a>
-            <a class="proj-btn" href="#" target="_blank">GitHub Repository</a>
-          </div>
-
           <div class="proj-section">
             <div class="proj-section-label">The Problem</div>
-            <div class="proj-section-body">A local tutoring academy was managing dozens of students entirely through scattered WhatsApp chains. Tutors had no direct line to students, owners acted as manual message routers, and the business had no hard data — like aggregate test scores or logged hours — to prove their ROI to prospective parents. The lack of infrastructure was actively preventing the business from scaling.</div>
+            <div class="proj-section-body">This program is built to help independent tutors and local academies manage their operations without relying entirely on scattered WhatsApp chains. Often, tutors have no direct line to students, owners act as manual message routers, and businesses lack hard data — like aggregate test scores or logged hours — to prove their ROI to prospective parents. The lack of infrastructure actively prevents these educational businesses from scaling.</div>
           </div>
 
           <div class="proj-section">
