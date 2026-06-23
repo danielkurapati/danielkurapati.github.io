@@ -271,10 +271,10 @@ h1.name {
   transition: color var(--T), border-color var(--T);
 }
 .photo-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.8rem;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem;
 }
 .photo-item {
-  aspect-ratio: 4/5; overflow: hidden; cursor: pointer; position: relative;
+  aspect-ratio: 3/4; overflow: hidden; cursor: pointer; position: relative;
   border: var(--bw) solid var(--border); transition: border-color var(--T);
 }
 .photo-item-inner { width: 100%; height: 100%; transition: transform 0.35s ease; }
@@ -487,6 +487,178 @@ h1.name {
 }
 
 /* ══════════════════════════════════════
+   TOOLS CARD (Tutoring)
+   ══════════════════════════════════════ */
+.tools-card {
+  margin-top: 1.6rem; padding-top: 1.4rem;
+  border-top: var(--bw) solid var(--border);
+  transition: border-color var(--T);
+}
+.tools-label {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 0.95rem; letter-spacing: 0.12em;
+  color: var(--text-muted); margin-bottom: 1rem;
+  transition: color var(--T);
+}
+.tools-grid {
+  display: flex; flex-wrap: wrap; gap: 0.7rem;
+}
+.tool-chip {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.08em;
+  color: var(--text); border: var(--bw) solid var(--border);
+  padding: 0.5rem 1rem;
+  transition: color var(--T), border-color var(--T);
+}
+
+/* ══════════════════════════════════════
+   PROJECTS LIST PAGE
+   ══════════════════════════════════════ */
+.projects-intro-text {
+  font-size: 1.05rem; line-height: 1.65; color: var(--text-muted);
+  margin-bottom: 1.6rem; padding-bottom: 1.4rem;
+  border-bottom: var(--bw) solid var(--border);
+  max-width: 700px; transition: color var(--T), border-color var(--T);
+}
+.projects-list {
+  display: flex; flex-direction: column; gap: 0;
+  border-top: var(--bw) solid var(--border);
+  border-left: var(--bw) solid var(--border);
+  border-right: var(--bw) solid var(--border);
+  transition: border-color var(--T);
+}
+.project-card {
+  display: flex; flex-direction: column;
+  border-bottom: var(--bw) solid var(--border);
+  cursor: pointer; overflow: hidden;
+  transition: border-color var(--T);
+}
+.project-card-label {
+  padding: 0.9rem 1.4rem;
+  border-bottom: var(--bw) solid var(--border);
+  display: flex; align-items: baseline; gap: 0.8rem;
+  transition: border-color var(--T);
+}
+.project-card-num {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 1.2rem; color: var(--text-muted);
+  min-width: 2rem; transition: color var(--T);
+}
+.project-card-name {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 1.2rem; color: var(--text); flex: 1;
+  transition: color var(--T);
+}
+.project-card-tag {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 0.75rem; letter-spacing: 0.08em;
+  color: var(--text-muted); border: var(--bw) solid var(--border);
+  padding: 0.2rem 0.6rem; flex-shrink: 0;
+  transition: color var(--T), border-color var(--T);
+}
+.project-card-banner {
+  width: 100%; aspect-ratio: 16/5; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  transition: border-color var(--T);
+}
+.project-card-banner-inner {
+  width: 100%; height: 100%;
+  transition: transform 0.35s ease;
+}
+.project-banner-tutohub {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 45%, #2c5364 100%);
+}
+.project-card-excerpt {
+  padding: 1rem 1.4rem 1.2rem;
+  font-size: 1rem; line-height: 1.6; color: var(--text-muted);
+  transition: color var(--T);
+}
+
+/* ══════════════════════════════════════
+   PROJECT DETAIL PAGE
+   ══════════════════════════════════════ */
+.proj-detail-hero {
+  width: 100%; aspect-ratio: 16/5; overflow: hidden; flex-shrink: 0;
+  border-bottom: var(--bw) solid var(--border);
+  transition: border-color var(--T);
+}
+.proj-detail-hero-inner {
+  width: 100%; height: 100%;
+}
+.proj-detail-meta-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-bottom: var(--bw) solid var(--border);
+  flex-shrink: 0; transition: border-color var(--T);
+}
+.proj-meta-cell {
+  padding: 0.8rem 1.2rem;
+  border-right: var(--bw) solid var(--border);
+  transition: border-color var(--T);
+}
+.proj-meta-cell:last-child { border-right: none; }
+.proj-meta-key {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 0.72rem; letter-spacing: 0.12em;
+  color: var(--text-muted); margin-bottom: 0.25rem;
+  transition: color var(--T);
+}
+.proj-meta-val {
+  font-size: 0.9rem; line-height: 1.4; color: var(--text);
+  transition: color var(--T);
+}
+.proj-action-btns {
+  display: flex; gap: 0.8rem; margin-bottom: 1.6rem;
+  padding-bottom: 1.4rem; border-bottom: var(--bw) solid var(--border);
+  transition: border-color var(--T);
+}
+.proj-btn {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 0.8rem; letter-spacing: 0.1em;
+  color: var(--text); border: var(--bw) solid var(--border);
+  padding: 0.55rem 1.2rem; background: none; cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color var(--T);
+  text-decoration: none; display: inline-block;
+}
+.proj-section {
+  margin-bottom: 1.8rem;
+}
+.proj-section-label {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+  font-size: 0.9rem; letter-spacing: 0.12em;
+  color: var(--text-muted); margin-bottom: 0.7rem;
+  transition: color var(--T);
+}
+.proj-section-body {
+  font-size: 1.05rem; line-height: 1.7; color: var(--text);
+  transition: color var(--T);
+}
+.proj-section-body ul { padding-left: 1.3em; }
+.proj-section-body li { margin-bottom: 0.5em; }
+.proj-section-body strong {
+  font-weight: 700;
+}
+.proj-divider {
+  border: none; border-top: var(--bw) solid var(--border);
+  margin: 1.6rem 0; transition: border-color var(--T);
+}
+
+/* ══════════════════════════════════════
+   PHOTO GRID — aspect-ratio aware
+   ══════════════════════════════════════ */
+.photo-item.portrait  { aspect-ratio: 3/4; }
+.photo-item.landscape { aspect-ratio: 16/9; }
+.photo-item.square    { aspect-ratio: 1/1; }
+
+/* ══════════════════════════════════════
    HOVER EFFECTS (Desktop Only)
    ══════════════════════════════════════ */
 @media (hover: hover) {
@@ -507,6 +679,11 @@ h1.name {
   .note-row:hover { background: var(--text); }
   .note-row:hover .note-num, .note-row:hover .note-title, .note-row:hover .note-review { color: var(--bg-card); }
   .contact-link:hover { border-bottom-color: var(--text); }
+  .project-card:hover .project-card-banner-inner { transform: scale(1.03); }
+  .project-card:hover .project-card-label { background: var(--text); }
+  .project-card:hover .project-card-num,
+  .project-card:hover .project-card-name { color: var(--bg-card); }
+  .proj-btn:hover { background: var(--text); color: var(--bg-card); }
 }
 
 /* ══════════════════════════════════════
@@ -597,6 +774,13 @@ h1.name {
   /* Note list */
   /* Left/Right borders are no longer stripped, they inherit from desktop class */
 
+  /* Projects */
+  .proj-detail-meta-bar { grid-template-columns: repeat(2, 1fr); }
+  .proj-meta-cell:nth-child(2) { border-right: none; }
+  .proj-meta-cell:nth-child(3) { border-top: var(--bw) solid var(--border); }
+  .proj-meta-cell:nth-child(4) { border-top: var(--bw) solid var(--border); border-right: none; }
+  .tools-grid { gap: 0.5rem; }
+
   /* Section blocks */
   .section-block { padding: 0.75rem 1rem; }
 
@@ -630,6 +814,9 @@ h1.name {
   .accordion-header:active .acc-icon {
     color: var(--bg-card) !important;
   }
+  .project-card:active .project-card-label { background: var(--text); }
+  .project-card:active .project-card-num,
+  .project-card:active .project-card-name { color: var(--bg-card); }
 }
 </style>
 </head>
@@ -671,9 +858,9 @@ h1.name {
           <div class="section-label">Current Focus</div>
           <div class="section-body">
             <ul>
-              <li>Online Tutoring: Teaching Physics and Chemistry for IGCSE, AS/A Level, and IB.</li>
-              <li>Visual Design: Currently exploring the principles of UI/UX and graphic design.</li>
-              <li>Video &amp; Systems: Editing with DaVinci Resolve and building knowledge systems in Obsidian.</li>
+              <li>Technical Skills: Current interests are webapp and app development.</li>
+              <li>Visual Design: Currently exploring the principles of UI/UX design.</li>
+              <li>Online Tutoring: Teaching Physics and Chemistry for IGCSE, IB and AS/A Levels.</li>
             </ul>
           </div>
         </div>
@@ -703,23 +890,25 @@ h1.name {
         <div class="mob-archive-section">
           <div class="sidebar-header">Archive</div>
           <div class="archive-list">
+            <div class="archive-item" onclick="navigate('projects')">
+              <span class="arc-num">1</span><span class="arc-name">Projects</span>
+            </div>
             <div class="archive-item" onclick="navigate('tutoring')">
-              <span class="arc-num">1</span><span class="arc-name">Online Tutoring</span>
+              <span class="arc-num">2</span><span class="arc-name">Online Tutoring</span>
             </div>
             <div class="archive-item" onclick="navigate('photography')">
-              <span class="arc-num">2</span><span class="arc-name">Photography</span>
+              <span class="arc-num">3</span><span class="arc-name">Photography</span>
             </div>
             <div class="archive-item" onclick="navigate('reading')">
-              <span class="arc-num">3</span><span class="arc-name">Reading</span>
+              <span class="arc-num">4</span><span class="arc-name">Reading</span>
             </div>
             <div class="archive-item" onclick="navigate('obsidian')">
-              <span class="arc-num">4</span><span class="arc-name">Obsidian</span>
+              <span class="arc-num">5</span><span class="arc-name">Obsidian</span>
             </div>
           </div>
           <div class="contact-block">
             <div class="section-label">Contact</div>
             <p>
-              <a href="https://instagram.com/danielkurapati" target="_blank" class="contact-link">@danielkurapati</a><br>
               <a href="#" onclick="openGmail(event)" class="contact-link">danielkurapati27@gmail.com</a>
             </p>
           </div>
@@ -727,33 +916,157 @@ h1.name {
       </div><div class="right-sidebar">
         <div class="sidebar-header">Archive</div>
         <div class="archive-list">
+          <div class="archive-item" onclick="navigate('projects')">
+            <span class="arc-num">1</span><span class="arc-name">Projects</span>
+          </div>
           <div class="archive-item" onclick="navigate('tutoring')">
-            <span class="arc-num">1</span><span class="arc-name">Online Tutoring</span>
+            <span class="arc-num">2</span><span class="arc-name">Online Tutoring</span>
           </div>
           <div class="archive-item" onclick="navigate('photography')">
-            <span class="arc-num">2</span><span class="arc-name">Photography</span>
+            <span class="arc-num">3</span><span class="arc-name">Photography</span>
           </div>
           <div class="archive-item" onclick="navigate('reading')">
-            <span class="arc-num">3</span><span class="arc-name">Reading</span>
+            <span class="arc-num">4</span><span class="arc-name">Reading</span>
           </div>
           <div class="archive-item" onclick="navigate('obsidian')">
-            <span class="arc-num">4</span><span class="arc-name">Obsidian</span>
+            <span class="arc-num">5</span><span class="arc-name">Obsidian</span>
           </div>
         </div>
         <div class="contact-block">
           <div class="section-label">Contact</div>
           <p>
-            <a href="https://instagram.com/danielkurapati" target="_blank" class="contact-link">@danielkurapati</a><br>
             <a href="#" onclick="openGmail(event)" class="contact-link">danielkurapati27@gmail.com</a>
           </p>
         </div>
       </div>
 
-    </div></div><div class="page" id="page-tutoring">
+    </div></div>
+
+  <!-- ═══════════ PROJECTS LIST PAGE ═══════════ -->
+  <div class="page" id="page-projects">
     <div class="inner-page-wrap">
       <div class="inner-top">
         <div>
           <div class="inner-meta">Archive · 01</div>
+          <div class="inner-title">Projects</div>
+        </div>
+        <div class="inner-nav-btns">
+          <button class="home-btn" onclick="navigate('home')">HOME</button>
+          <button class="back-btn" onclick="goBack()">BACK</button>
+        </div>
+      </div>
+      <div class="inner-scroll">
+        <p class="projects-intro-text">A selection of things I have built — web apps, tools, and experiments at the intersection of design and engineering.</p>
+        <div class="projects-list">
+          <div class="project-card" onclick="navigate('project-tutohub')">
+            <div class="project-card-label">
+              <span class="project-card-num">01</span>
+              <span class="project-card-name">TutorHub</span>
+              <span class="project-card-tag">Full-Stack · React · Supabase</span>
+            </div>
+            <div class="project-card-banner">
+              <div class="project-card-banner-inner project-banner-tutohub"></div>
+            </div>
+            <div class="project-card-excerpt">A modular, multi-tenant CRM for independent tutors — transforming scattered WhatsApp communications into a centralised, data-driven educational dashboard.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ PROJECT DETAIL: TUTOHUB ═══════════ -->
+  <div class="page" id="page-project-tutohub">
+    <div class="inner-page-wrap" style="overflow:hidden; display:flex; flex-direction:column; flex:1;">
+      <div class="inner-top">
+        <div>
+          <div class="inner-meta">Projects · 01</div>
+          <div class="inner-title">TutorHub</div>
+        </div>
+        <div class="inner-nav-btns">
+          <button class="home-btn" onclick="navigate('home')">HOME</button>
+          <button class="back-btn" onclick="goBack()">BACK</button>
+        </div>
+      </div>
+      <div class="proj-detail-hero">
+        <div class="proj-detail-hero-inner project-banner-tutohub"></div>
+      </div>
+      <div class="proj-detail-meta-bar">
+        <div class="proj-meta-cell">
+          <div class="proj-meta-key">Role</div>
+          <div class="proj-meta-val">Solo Full-Stack Developer</div>
+        </div>
+        <div class="proj-meta-cell">
+          <div class="proj-meta-key">Timeline</div>
+          <div class="proj-meta-val">1-Week Intensive Sprint</div>
+        </div>
+        <div class="proj-meta-cell">
+          <div class="proj-meta-key">Tech Stack</div>
+          <div class="proj-meta-val">React · Tailwind · Supabase</div>
+        </div>
+        <div class="proj-meta-cell">
+          <div class="proj-meta-key">Context</div>
+          <div class="proj-meta-val">Personal Project</div>
+        </div>
+      </div>
+      <div class="inner-scroll">
+        <div class="proj-action-btns">
+          <a class="proj-btn" href="#" target="_blank">Live Demo</a>
+          <a class="proj-btn" href="#" target="_blank">GitHub Repository</a>
+        </div>
+
+        <div class="proj-section">
+          <div class="proj-section-label">The Problem</div>
+          <div class="proj-section-body">A local tutoring academy was managing dozens of students entirely through scattered WhatsApp chains. Tutors had no direct line to students, owners acted as manual message routers, and the business had no hard data — like aggregate test scores or logged hours — to prove their ROI to prospective parents. The lack of infrastructure was actively preventing the business from scaling.</div>
+        </div>
+
+        <div class="proj-section">
+          <div class="proj-section-label">The Goal</div>
+          <div class="proj-section-body">To build a premium, 3-tier web application (Admin, Tutor, Student views) that eliminated the communication bottleneck. The MVP focused on the Tutor View: a command centre for scheduling recurring classes, logging session topics, assigning work, and tracking grading deadlines — all in a clean, enterprise-grade UI.</div>
+        </div>
+
+        <hr class="proj-divider">
+
+        <div class="proj-section">
+          <div class="proj-section-label">Technical Approach</div>
+          <div class="proj-section-body">Built as a Single Page Application using React, styled purely with Tailwind CSS for a crisp, Apple-like aesthetic without relying on bulky UI libraries. The backend is powered by Supabase, leveraging PostgreSQL for relational data, GoTrue for role-based authentication, and Row Level Security to physically isolate tenant data at the database level.</div>
+        </div>
+
+        <div class="proj-section">
+          <div class="proj-section-label">Key Features</div>
+          <div class="proj-section-body">
+            <ul>
+              <li><strong>Unified Educational Stream:</strong> A chronological feed merging classes, assignments, and announcements — sorted dynamically by due dates, creation times, and urgency.</li>
+              <li><strong>Smart Actionable Dashboards:</strong> An Overview hub with time-aware greetings and dynamic urgency metrics. Automatically isolates the "Up Next" class and aggregates overdue items into a Needs Attention routing centre.</li>
+              <li><strong>Non-Destructive Audit Trails:</strong> Soft Deletes for class scheduling — cancelled classes are preserved with distinct styling and an Undo feature, keeping billing and historical records intact.</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="proj-divider">
+
+        <div class="proj-section">
+          <div class="proj-section-label">The Obstacle</div>
+          <div class="proj-section-body">During rapid prototyping, the primary App.jsx file ballooned into a 1,200+ line monolith containing all views, modals, forms, and state variables. Managing prop-drilling became fragile, and pushing new features caused cascading rendering bugs. Migrating the database to a multi-tenant Supabase architecture also caused ID-matching failures when saving user preferences.</div>
+        </div>
+
+        <div class="proj-section">
+          <div class="proj-section-label">The Solution</div>
+          <div class="proj-section-body">Paused feature development to execute a full architectural refactor — breaking the monolith into a scalable folder structure (/components, /views, /modals). Implemented React's Context API (AppContext) to eliminate prop-drilling, turning the root component into a central broadcaster. Updated Supabase to rely on auth.users(id) with .single() queries and strict Row Level Security policies, ensuring data integrity without hardcoding IDs.</div>
+        </div>
+
+        <div class="proj-section">
+          <div class="proj-section-label">Key Takeaways</div>
+          <div class="proj-section-body">This project bridged the gap between writing scripts and architecting systems. Component isolation, multi-tenant database design, and securing user data at the row level before it ever reaches the frontend — these are the principles that will shape every project I build from here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page-tutoring">
+    <div class="inner-page-wrap">
+      <div class="inner-top">
+        <div>
+          <div class="inner-meta">Archive · 02</div>
           <div class="inner-title">Online Tutoring</div>
         </div>
         <div class="inner-nav-btns">
@@ -764,6 +1077,14 @@ h1.name {
       <div class="inner-scroll">
         <p class="tutor-intro" id="tutorIntro"></p>
         <div class="tutor-grid" id="tutorGrid"></div>
+        <div class="tools-card">
+          <div class="tools-label">Tools Used</div>
+          <div class="tools-grid">
+            <span class="tool-chip">One by Wacom Tablet</span>
+            <span class="tool-chip">OneNote</span>
+            <span class="tool-chip">Google Meet</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -772,7 +1093,7 @@ h1.name {
     <div class="inner-page-wrap">
       <div class="inner-top">
         <div>
-          <div class="inner-meta">Archive · 02</div>
+          <div class="inner-meta">Archive · 03</div>
           <div class="inner-title">Photography</div>
         </div>
         <div class="inner-nav-btns">
@@ -781,7 +1102,7 @@ h1.name {
         </div>
       </div>
       <div class="inner-scroll">
-        <p class="photo-intro-text">A collection of moments — light, shadow, and the quiet geometry of everyday life. Tap any photo to view full screen.</p>
+        <p class="photo-intro-text">A collection of moments — light, shadow, and the quiet geometry of everyday life. Most were shot on a Samsung Galaxy Note5 and edited on Lightroom Mobile. Tap any photo to view full screen.</p>
         <div class="photo-grid" id="photoGrid"></div>
       </div>
     </div>
@@ -791,7 +1112,7 @@ h1.name {
     <div class="inner-page-wrap">
       <div class="inner-top">
         <div>
-          <div class="inner-meta">Archive · 03</div>
+          <div class="inner-meta">Archive · 04</div>
           <div class="inner-title">Reading</div>
         </div>
         <div class="inner-nav-btns">
@@ -800,7 +1121,7 @@ h1.name {
         </div>
       </div>
       <div class="inner-scroll">
-        <p class="reading-intro-text">A collection of books that have fundamentally shaped how I think about design, science, and human behavior. These are the ones I keep returning to.</p>
+        <p class="reading-intro-text">A reading list — coming soon.</p>
         <div class="reading-list" id="readingList"></div>
       </div>
     </div>
@@ -810,7 +1131,7 @@ h1.name {
     <div class="inner-page-wrap">
       <div class="inner-top">
         <div>
-          <div class="inner-meta">Archive · 04</div>
+          <div class="inner-meta">Archive · 05</div>
           <div class="inner-title">Obsidian</div>
         </div>
         <div class="inner-nav-btns">
@@ -960,6 +1281,9 @@ tutors.forEach(t => {
 
 /* ══════════════════════════════════════
    PHOTOGRAPHY
+   Photos array: add { label, src } for real images,
+   or { label, cls } for gradient placeholders.
+   orientation is auto-detected from image dimensions.
    ══════════════════════════════════════ */
 const photos = [
   {label:'Urban Light', cls:'ph-1'}, {label:'Geometry',  cls:'ph-2'}, {label:'Nature',   cls:'ph-3'},
@@ -967,15 +1291,45 @@ const photos = [
   {label:'Texture',    cls:'ph-7'}, {label:'Green',     cls:'ph-8'}, {label:'Night',    cls:'ph-9'},
   {label:'Shadow',     cls:'ph-1'}, {label:'Morning',   cls:'ph-3'}, {label:'Abstract', cls:'ph-5'},
 ];
+
+/* Detect orientation from an image element and return 'portrait'|'landscape'|'square' */
+function getOrientation(w, h) {
+  const ratio = w / h;
+  if (ratio < 0.95)  return 'portrait';
+  if (ratio > 1.05)  return 'landscape';
+  return 'square';
+}
+
 const pg = document.getElementById('photoGrid');
-photos.forEach((ph, i) => {
+
+function buildPhotoItem(ph, i) {
   const item = document.createElement('div');
-  item.className = 'photo-item';
-  item.innerHTML = `<div class="photo-item-inner ${ph.cls}"></div>
-    <div class="photo-item-overlay"><span class="photo-item-label">${ph.label}</span></div>`;
+
+  if (ph.src) {
+    /* Real image — detect orientation then set class */
+    item.className = 'photo-item';
+    const bgImg = new Image();
+    bgImg.onload = function() {
+      const orient = getOrientation(bgImg.naturalWidth, bgImg.naturalHeight);
+      item.classList.add(orient);
+    };
+    bgImg.src = ph.src;
+    item.innerHTML = `
+      <div class="photo-item-inner" style="background:url('${ph.src}') center/cover no-repeat"></div>
+      <div class="photo-item-overlay"><span class="photo-item-label">${ph.label}</span></div>`;
+  } else {
+    /* Gradient placeholder — default to portrait (tall) */
+    item.className = 'photo-item portrait';
+    item.innerHTML = `
+      <div class="photo-item-inner ${ph.cls}"></div>
+      <div class="photo-item-overlay"><span class="photo-item-label">${ph.label}</span></div>`;
+  }
+
   item.onclick = () => openLb(i);
-  pg.appendChild(item);
-});
+  return item;
+}
+
+photos.forEach((ph, i) => pg.appendChild(buildPhotoItem(ph, i)));
 
 let curPhoto = 0;
 function openLb(i) {
@@ -987,7 +1341,14 @@ function openLb(i) {
 }
 function renderLb() {
   const ph = photos[curPhoto];
-  document.getElementById('lbBox').className = `lb-img-box ${ph.cls}`;
+  const box = document.getElementById('lbBox');
+  if (ph.src) {
+    box.className = 'lb-img-box';
+    box.style.background = `url('${ph.src}') center/contain no-repeat`;
+  } else {
+    box.className = `lb-img-box ${ph.cls}`;
+    box.style.background = '';
+  }
   document.getElementById('lbCap').textContent = `${ph.label}  ·  ${curPhoto + 1} / ${photos.length}`;
 }
 function closeLb() {
@@ -1018,22 +1379,14 @@ const bookGradients = [
   'linear-gradient(160deg,#1f3a1f,#5a9e5a)',
 ];
 const books = [
-  { title:'Flowers for Algernon',             author:'Daniel Keyes',        tag:'Sci-Fi',
-    review:'A heart-wrenching tale of intelligence, identity, and what it truly means to be human.' },
-  { title:'The Design of Everyday Things',    author:'Don Norman',           tag:'Design',
-    review:'A foundational text on human-centred design — changed how I see every object I interact with.' },
-  { title:'Atomic Habits',                    author:'James Clear',          tag:'Self-Help',
-    review:'Practical and incremental — a system for building habits that actually stick.' },
-  { title:'The Moon is a Harsh Mistress',     author:'Robert A. Heinlein',   tag:'Sci-Fi',
-    review:'Gripping political sci-fi with a fascinating AI narrator. Made me rethink freedom.' },
-  { title:'Deep Work',                        author:'Cal Newport',          tag:'Productivity',
-    review:'A compelling case for distraction-free focus. Directly influenced how I study.' },
-  { title:'The Pragmatic Programmer',         author:'Hunt & Thomas',        tag:'CS',
-    review:'Timeless advice for software craftspeople — every chapter has something worth acting on.' },
-  { title:"Man's Search for Meaning",         author:'Viktor Frankl',        tag:'Philosophy',
-    review:'Profound and quietly devastating. Frankl finds purpose in the darkest circumstances.' },
-  { title:'A Short History of Nearly Everything', author:'Bill Bryson',      tag:'Science',
-    review:"Makes science feel alive and wondrous — Bryson's enthusiasm is completely contagious." },
+  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'—', author:'—', tag:'—', review:'' },
+  { title:'—', author:'—', tag:'—', review:'' },
 ];
 
 const rl = document.getElementById('readingList');
